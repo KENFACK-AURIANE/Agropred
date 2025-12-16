@@ -4,7 +4,7 @@ import '../styles/Intermediaire.css'
 const Intermediaire = () => {
   return (
     <div className="thirdpart">
-      <div className="title">Cultures ciblées par notre rendement</div>
+      <div className="title">Cultures ciblées par notre modèle de prediction</div>
       <div className="subtitle">Pour le moment, notre modele ne peut predire qu'un nombre fini de culture.Ces cultures sont presentées çi-dessus</div>
       <div className='plantes'>
 			

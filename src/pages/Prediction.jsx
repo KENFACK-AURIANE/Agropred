@@ -170,7 +170,7 @@ const Prediction = () => {
           <div className="ligne"></div>
           <div className="resultats">
             <div className="head">
-              Les résultats de votre prédiction s'afficheront instructions
+              Les résultats de votre prédiction s'afficheront ici
             </div>
             
             <div className="Nomplante">
