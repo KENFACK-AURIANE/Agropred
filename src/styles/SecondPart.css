@@ -1,0 +1,126 @@
+.Secondpart{
+   display: flex;
+   flex-direction: row;
+   column-gap: 5em;
+   /* margin-top: 3em; */
+   padding: 5em 2em 2em 2em;
+   background-color: rgb(232, 240, 232);
+   color: black;
+}
+.Secondpart .imageIllustratif{
+    width: 50%;
+    height: 100%;
+    border-top: 2px solid rgb(8, 78, 8);
+    border-right: 2px solid rgb(8, 78, 8);
+}
+.Secondpart .imageIllustratif img{
+    width: 100%;
+}
+.Secondpart .descriptionAction{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    width: 40%;  
+}
+.Secondpart .descriptionAction .littleTitle{
+    color: rgb(8, 78, 8);
+    font-weight: 900;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: start;
+}
+.Secondpart .descriptionAction .Titre{
+    color: black;
+    font-weight: 900;
+    font-size: 1.85em;
+}
+.listeUtilisation{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin-top: 1em;
+}
+.etape{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+    align-items: center;
+    color: rgb(8, 0, 0);
+    font-weight: 500;
+}
+.etape .numero{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: rgb(8, 78, 8);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .Secondpart {
+        /* Empiler les éléments */
+        flex-direction: column; 
+        column-gap: 0;
+        row-gap: 2em;
+        padding: 3em 1em;
+    }
+    
+    .Secondpart .imageIllustratif,
+    .Secondpart .descriptionAction {
+        /* Pleine largeur */
+        width: 100%; 
+    }
+    
+    .Secondpart .imageIllustratif {
+        /* Retirer les bordures spécifiques sur mobile */
+        border: none; 
+    }
+
+    .Secondpart .descriptionAction .Titre {
+        font-size: 1.5em;
+    }
+}
+
+/* =======================
+   RESPONSIVE MOBILE
+======================= */
+@media (max-width: 768px) {
+
+  /* Afficher le bouton hamburger */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  /* Menu caché par défaut */
+  .liens {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0b3d2e;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+  }
+
+  /* Menu ouvert */
+  .liens.open {
+    transform: translateY(0);
+  }
+
+  /* Centrer la partie contact */
+  .nousContacter {
+    text-align: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,270 @@
+/* ========== STYLES DESKTOP (par défaut) ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header principal */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgb(232, 240, 232) 0%,
+    rgb(220, 235, 220) 100%
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem 4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo / Icone */
+.icone {
+  flex-shrink: 0;
+}
+
+.icone .image {
+  color: rgb(8, 78, 8);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.icone .image:hover {
+  transform: scale(1.05);
+}
+
+.icone .image span {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: rgb(50, 150, 50);
+}
+
+/* Menu hamburger (caché par défaut) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger {
+  width: 28px;
+  height: 3px;
+  background-color: rgb(8, 78, 8);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:nth-child(1).open {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger:nth-child(2).open {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger:nth-child(3).open {
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* Liens et contacts */
+.liens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+  flex: 1;
+  margin-left: 3rem;
+}
+
+.liens .lien {
+  text-decoration: none;
+  color: rgb(8, 78, 8);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.liens .lien::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(50, 150, 50);
+  transition: width 0.3s ease;
+}
+
+.liens .lien:hover::after {
+  width: 100%;
+}
+
+.liens .lien:hover {
+  color: rgb(50, 150, 50);
+}
+
+/* Section contact */
+.nousContacter {
+  color: rgb(8, 78, 8);
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.nousContacter .annonce {
+  color: rgb(149, 173, 149);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ========== RESPONSIVE - TABLETTE (768px à 1024px) ========== */
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .liens {
+    gap: 2rem;
+    margin-left: 2rem;
+  }
+
+  .liens .lien {
+    font-size: 0.9rem;
+  }
+
+  .nousContacter {
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== RESPONSIVE - MOBILE (max-width 768px) ========== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .icone .image {
+    font-size: 1.4rem;
+  }
+
+  /* Afficher le menu hamburger */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menu links visible par défaut sur mobile */
+  .liens {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: linear-gradient(
+      135deg,
+      rgb(232, 240, 232) 0%,
+      rgb(220, 235, 220) 100%
+    );
+    gap: 0;
+    max-height: none;
+    overflow-y: auto;
+    transition: max-height 0.4s ease;
+    padding: 1.5rem 0;
+    margin-left: 0;
+    align-items: stretch;
+    border-bottom: 3px solid rgb(50, 150, 50);
+    display: flex;
+  }
+
+  /* Menu visible quand open */
+  .liens.open {
+    max-height: 500px;
+    padding: 1.5rem 0;
+    overflow-y: auto;
+  }
+
+  .liens .lien {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(8, 78, 8, 0.1);
+    border-radius: 0;
+    text-align: left;
+  }
+
+  .liens .lien::after {
+    display: none;
+  }
+
+  .liens .lien:hover {
+    background-color: rgba(50, 150, 50, 0.1);
+    padding-left: 2rem;
+  }
+
+  /* Section contact sur mobile */
+  .nousContacter {
+    padding: 1.5rem;
+    text-align: left;
+    white-space: normal;
+    border-top: 1px solid rgba(8, 78, 8, 0.1);
+    width: 100%;
+  }
+
+  .nousContacter .annonce {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ========== RESPONSIVE - PETIT MOBILE (max-width 480px) ========== */
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .icone .image {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 2.5px;
+  }
+
+  .liens .lien {
+    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .nousContacter {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+
+  .nousContacter .annonce {
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== ANIMATIONS ET TRANSITIONS ========== */

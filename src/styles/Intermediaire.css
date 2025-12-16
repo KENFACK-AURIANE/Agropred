@@ -1,0 +1,68 @@
+.thirdpart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+    padding: 5em 0em 5em 0em;
+   color: black;
+}
+.thirdpart .title{
+    color: black;
+    font-weight: 900;
+    font-size: 1.85em;
+    text-transform: uppercase;
+}
+.thirdpart .subtitle{
+    color: black;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+.listePlantes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2em;
+    
+}
+.Cplante{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5em;
+    color: white;
+}
+
+.listePlantes{
+    /* Ajustement pour les grands écrans */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 4em;
+    /* Utiliser 'gap' au lieu de 'row-gap' pour Grid (meilleure pratique) */
+    gap: 2em; 
+}
+
+@media (max-width: 1024px) {
+    .listePlantes {
+        /* 2 colonnes sur tablette */
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 0 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .listePlantes {
+        /* 1 colonne sur mobile */
+        grid-template-columns: 1fr; 
+        padding: 0 1em;
+    }
+    
+    .thirdpart .title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    .thirdpart .subtitle {
+        font-size: 1em;
+        text-align: center;
+        padding: 0 1em;
+    }
+}

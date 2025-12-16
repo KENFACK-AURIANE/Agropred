@@ -1,0 +1,16 @@
+.plante {
+	height: 50%;
+	width: 75%;
+	border-radius: 20px;
+}
+.plante .image{
+    width: 100%;
+}
+.plante .nomImage {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	text-transform: capitalize;
+    background-color: rgb(8, 78, 8);
+}

@@ -1,0 +1,327 @@
+.PREDIRE {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  color: black;
+}
+.PREDICTION {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  padding: 7em 2em 0em 4em;
+  color: black;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+/* .PREDICTION .partieGauche{
+    width: 25%;
+    flex: 1;
+    background-color: white;
+} */
+.PREDICTION .partieGauche {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 0em 0em 0em 3em;
+}
+.PREDICTION .partieGauche .instructions {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.PREDICTION .partieGauche .formulaire {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0em 0em 0.5em;
+  row-gap: 2em;
+}
+.PREDICTION .partieGauche .formulaire .input1 {
+  background-color: rgb(238, 234, 229);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.PREDICTION .partieGauche .formulaire .input2 {
+  background-color: rgb(238, 234, 229);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+.rowInput {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  padding: 1em;
+}
+.PREDICTION .partieGauche .formulaire .input {
+  display: flex;
+  flex-direction: column;
+}
+.PREDICTION .partieGauche .formulaire .input input {
+  outline: none;
+  height: 2em;
+  width: 25em;
+  max-width: calc(100% - 2em);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  margin: 0em 0em 0em 1em;
+  box-sizing: border-box;
+}
+.PREDICTION .partieGauche .formulaire .input .option {
+  outline: none;
+  border: 1px solid black;
+  height: 2.2em;
+  width: 25em;
+  max-width: calc(100% - 2em);
+  background-color: white;
+  color: black;
+  margin: 0em 0em 0em 1em;
+  box-sizing: border-box;
+}
+.PREDICTION .partieDroite {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 5em 2em 0em 1em;
+  width: 30%;
+  max-height: calc(100vh - 7em);
+  overflow-y: auto;
+}
+.PREDICTION .partieDroite .submit,
+.PREDICTION .partieDroite .submit2 {
+  width: 100%;
+  height: 2em;
+  margin: 0em;
+}
+
+.PREDICTION .partieDroite .submit {
+  margin-bottom: 1.5em;
+}
+.PREDICTION .partieDroite .submit button {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(8, 78, 8);
+  color: white;
+  font-size: 0.8em;
+  border: none;
+  cursor: pointer;
+}
+.PREDICTION .partieDroite .submit2 button {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: rgb(8, 78, 8);
+  font-size: 0.8em;
+  border: none;
+  cursor: pointer;
+  border: 1px solid;
+}
+.PREDICTION .partieDroite .ligne {
+  background-color: rgb(196, 184, 184);
+  width: 100%;
+  height: 0.1em;
+}
+.PREDICTION .partieDroite .resultats {
+  width: 100%;
+  margin: 0em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  color: black;
+  font-weight: 500;
+}
+.PREDICTION .partieDroite .head {
+  color: rgb(80, 73, 73);
+  font-weight: 500;
+  font-size: 0.7em;
+  width: 100%;
+}
+.Nomplante,
+.resultat {
+  background-color: white;
+  height: 2em;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  border: 1px solid rgb(8, 78, 8);
+}
+
+/* ========== RESPONSIVE - TABLETTE (768px à 1024px) ========== */
+
+@media (max-width: 1024px) {
+  .PREDICTION {
+    padding: 7em 2em 0em 2em;
+  }
+
+  .PREDICTION .partieGauche {
+    width: 65%;
+    padding: 0em;
+  }
+
+  .PREDICTION .partieGauche .instructions {
+    font-size: 1.6em;
+  }
+
+  .PREDICTION .partieGauche .formulaire .input input,
+  .PREDICTION .partieGauche .formulaire .input .option {
+    width: 20em;
+  }
+
+  .PREDICTION .partieDroite {
+    width: 35%;
+    padding: 3.1em 1em 0em 0em;
+  }
+
+  .PREDICTION .partieDroite .submit,
+  .PREDICTION .partieDroite .submit2 {
+    width: 50%;
+    margin: 2em 0em 0em 1em;
+  }
+
+  .PREDICTION .partieDroite .resultats {
+    width: 50%;
+    margin: 0.35em 0em 0em 1em;
+  }
+}
+
+/* ========== RESPONSIVE - MOBILE (max-width 768px) ========== */
+
+@media (max-width: 768px) {
+  .PREDIRE {
+    height: auto;
+  }
+
+  .PREDICTION {
+    flex-direction: column;
+    height: auto;
+    padding: 100px 1.5em 2em 1.5em;
+    width: 100%;
+  }
+
+  .PREDICTION .partieGauche {
+    width: 100%;
+    padding: 0em;
+    row-gap: 1.5em;
+  }
+
+  .PREDICTION .partieGauche .instructions {
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .PREDICTION .partieGauche .formulaire {
+    width: 100%;
+    padding: 0em;
+    row-gap: 1.5em;
+  }
+
+  .PREDICTION .partieGauche .formulaire .input1,
+  .PREDICTION .partieGauche .formulaire .input2 {
+    background-color: rgb(238, 234, 229);
+    padding: 1em;
+    border-radius: 8px;
+  }
+
+  .rowInput {
+    flex-direction: column;
+    column-gap: 0;
+    padding: 0;
+  }
+
+  .PREDICTION .partieGauche .formulaire .input input,
+  .PREDICTION .partieGauche .formulaire .input .option {
+    width: 100%;
+    margin: 0.5em 0em;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+  }
+
+  .PREDICTION .partieDroite {
+    width: 100%;
+    padding: 2em 0em 0em 0em;
+    margin-top: 2em;
+  }
+
+  .PREDICTION .partieDroite .submit,
+  .PREDICTION .partieDroite .submit2 {
+    width: 100%;
+    height: 2.5em;
+    margin: 1em 0em 0em 0em;
+  }
+
+  .PREDICTION .partieDroite .submit button,
+  .PREDICTION .partieDroite .submit2 button {
+    font-size: 1em;
+  }
+
+  .PREDICTION .partieDroite .ligne {
+    width: 100%;
+  }
+
+  .PREDICTION .partieDroite .resultats {
+    width: 100%;
+    margin: 2em 0em 0em 0em;
+    row-gap: 0.8em;
+  }
+
+  .PREDICTION .partieDroite .head {
+    font-size: 0.85em;
+  }
+
+  .Nomplante,
+  .resultat {
+    height: 2.5em;
+    font-size: 0.9em;
+  }
+}
+
+/* ========== RESPONSIVE - PETIT MOBILE (max-width 480px) ========== */
+
+@media (max-width: 480px) {
+  .PREDICTION {
+    padding: 100px 1em 1.5em 1em;
+  }
+
+  .PREDICTION .partieGauche {
+    row-gap: 1em;
+  }
+
+  .PREDICTION .partieGauche .instructions {
+    font-size: 1.2em;
+  }
+
+  .PREDICTION .partieGauche .formulaire {
+    row-gap: 1em;
+  }
+
+  .PREDICTION .partieGauche .formulaire .input input,
+  .PREDICTION .partieGauche .formulaire .input .option {
+    height: 2.5em;
+    font-size: 0.95em;
+  }
+
+  .PREDICTION .partieDroite .submit,
+  .PREDICTION .partieDroite .submit2 {
+    height: 2.2em;
+  }
+
+  .PREDICTION .partieDroite .resultats {
+    margin: 1.5em 0em 0em 0em;
+  }
+
+  .Nomplante,
+  .resultat {
+    height: 2.2em;
+    font-size: 0.85em;
+  }
+}
